@@ -742,18 +742,6 @@ reproducible benchmarking
 
 ---
 
-## Limitations
-
-VANET-IDS26 is simulation-generated.
-
-The attacks represent controlled benchmark scenarios and should not be interpreted as direct real-world incident logs.
-
-Models trained on this dataset should be validated further before use in real vehicular systems.
-
-The full dataset is large, so users should use chunked loading, streaming, or distributed processing for large-scale experiments.
-
----
-
 ## Ethical Use
 
 This dataset is intended for defensive research only. It should be used to build, evaluate, and improve intrusion detection and resilience methods for vehicular networks.
