@@ -1,0 +1,45 @@
+Dataset name: VANET-IDS26
+Master file: research_ready/vanet_ids26_master.csv.gz
+Master file size: approximately 79 GB
+
+Purpose:
+One single model-ready compressed CSV file for VANET intrusion detection experiments.
+Researchers can load this file and create their own train/validation/test splits.
+
+Rows excluding header:
+Total rows: 786,798,378
+Benign base rows: 37,577,963
+Attack overlay rows: 749,220,415
+
+Columns:
+Total columns: 46
+
+Labels:
+binary_label:
+0 = benign
+1 = attack
+
+multiclass_label:
+0 = benign
+1-26 = VANET attack classes
+
+Validation status:
+Master build completed successfully.
+Python quick-read validation passed.
+Full gzip integrity validation passed: MASTER GZIP OK.
+
+Source:
+Base benign messages:
+dataset/processed/run_001001 to run_001020/messages.csv
+
+Attack overlays:
+dataset/overlays/run_001001 to run_001020/**/attack_overlay.csv
+
+Excluded from master file:
+dataset/processed/run_000001
+dataset/processed/run_000002
+dataset/attacks/
+
+Important note:
+The master file intentionally does not provide fixed train/validation/test splits.
+Users can create message-level, run-level, density-level, attack-ratio-level, attack-type-level, or federated/client-level splits as needed.

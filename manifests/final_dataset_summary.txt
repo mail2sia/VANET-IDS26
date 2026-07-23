@@ -1,0 +1,27 @@
+Dataset name: VANET-IDS26
+Checkpoint time: 2026-07-21T11:34:32
+Root path: /mnt/c/VANET_Dataset/fl-bert-vanet-dataset
+
+Expected final dataset counts
+--------------------------------
+Expected overlay run folders: 20
+Expected attack overlay CSV files: 2080
+Expected processed big run folders: 20
+Expected overlay manifest lines: 2081
+
+Observed final dataset counts
+--------------------------------
+Observed overlay run folders: 20
+Observed attack overlay CSV files: 2080
+Observed processed big run folders: 20
+Observed all messages.csv files: 22
+Observed overlay manifest lines: 2081
+
+Folder sizes
+--------------------------------
+225G	dataset
+444K	release
+5.8G	scenarios
+192K	scripts
+
+STATUS: PASSED — VANET-IDS26 Windows dataset checkpoint verified.

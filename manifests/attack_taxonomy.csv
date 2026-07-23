@@ -1,0 +1,28 @@
+multiclass_label,attack_type,binary_label,attack_family,brief_description
+0,benign,0,benign,Normal VANET message without malicious manipulation
+1,constant_position,1,position_falsification,Reports a fixed false position
+2,position_offset,1,position_falsification,Reports a position shifted by an offset
+3,random_position,1,position_falsification,Reports randomly falsified position values
+4,speed_manipulation,1,kinematic_falsification,Manipulates claimed vehicle speed
+5,acceleration_manipulation,1,kinematic_falsification,Manipulates claimed acceleration
+6,heading_manipulation,1,kinematic_falsification,Manipulates claimed heading direction
+7,lane_spoofing,1,lane_map_falsification,Reports a false lane identifier
+8,impossible_kinematics,1,kinematic_falsification,Creates physically implausible movement behavior
+9,eventual_stop,1,kinematic_falsification,Gradually falsifies behavior toward stopping
+10,false_brake_event,1,event_falsification,Injects or reports false braking events
+11,false_emergency_vehicle,1,event_falsification,Claims false emergency-vehicle behavior
+12,false_hazard_event,1,event_falsification,Injects or reports false hazard events
+13,replay,1,timing_replay,Replays earlier VANET messages
+14,delayed_message,1,timing_replay,Delays message timing maliciously
+15,timestamp_shift,1,timing_replay,Shifts message timestamps
+16,stale_message_replay,1,timing_replay,Replays stale messages as if current
+17,sybil,1,identity_spoofing,Creates multiple claimed identities
+18,impersonation,1,identity_spoofing,Impersonates another vehicle identity
+19,pseudonym_abuse,1,identity_spoofing,Abuses pseudonym or identity-change behavior
+20,flooding_ddos,1,availability_flooding,Floods the network with excessive messages
+21,beacon_rate_abuse,1,availability_flooding,Abuses beacon transmission rate
+22,gnss_spoofing,1,position_falsification,Spoofs GNSS-derived position behavior
+23,map_location_spoofing,1,lane_map_falsification,Spoofs map-matched location information
+24,ghost_vehicle,1,identity_spoofing,Injects a non-existent vehicle identity
+25,false_object_injection,1,event_falsification,Injects a false perceived object
+26,object_position_shift,1,event_falsification,Shifts the reported position of an object

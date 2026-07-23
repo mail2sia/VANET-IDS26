@@ -1,0 +1,171 @@
+VANET-IDS26 Schema Inspection
+Root: /mnt/c/VANET_Dataset/fl-bert-vanet-dataset
+
+================================================================================
+Basic counts
+================================================================================
+Final big base message files expected: 20
+Final big base message files found: 20
+Overlay files expected: 2080
+Overlay files found: 2080
+Overlay manifest exists: True
+Overlay manifest lines: 2081
+
+================================================================================
+Base messages.csv header analysis
+================================================================================
+Base header variants found: 1
+
+Base header variant 1 used by 20 files
+Number of columns: 21
+01. run_id
+02. message_id
+03. time
+04. physical_sender_id
+05. claimed_sender_id
+06. sequence_number
+07. true_x
+08. true_y
+09. true_speed
+10. true_acceleration
+11. true_heading
+12. true_lane
+13. claimed_x
+14. claimed_y
+15. claimed_speed
+16. claimed_acceleration
+17. claimed_heading
+18. attack_type
+19. attack_label
+20. is_attacker
+21. message_label
+
+================================================================================
+Overlay attack_overlay.csv header analysis
+================================================================================
+Overlay header variants found: 1
+
+Overlay header variant 1 used by 2080 files
+Number of columns: 36
+01. base_run_id
+02. attack_dataset_id
+03. base_message_id
+04. overlay_message_id
+05. time
+06. claimed_time
+07. physical_sender_id
+08. claimed_sender_id
+09. sequence_number
+10. true_x
+11. true_y
+12. true_speed
+13. true_acceleration
+14. true_heading
+15. true_lane
+16. claimed_x
+17. claimed_y
+18. claimed_speed
+19. claimed_acceleration
+20. claimed_heading
+21. claimed_lane
+22. attack_type
+23. attack_label
+24. message_label
+25. is_attacker
+26. is_synthetic_message
+27. original_message_id
+28. malicious_delay_ms
+29. sybil_group_id
+30. event_type
+31. false_object_id
+32. object_type
+33. object_x
+34. object_y
+35. attack_start_time
+36. attack_notes
+
+================================================================================
+Common and union columns
+================================================================================
+Base common columns count: 21
+attack_label, attack_type, claimed_acceleration, claimed_heading, claimed_sender_id, claimed_speed, claimed_x, claimed_y, is_attacker, message_id, message_label, physical_sender_id, run_id, sequence_number, time, true_acceleration, true_heading, true_lane, true_speed, true_x, true_y
+
+Base union columns count: 21
+attack_label, attack_type, claimed_acceleration, claimed_heading, claimed_sender_id, claimed_speed, claimed_x, claimed_y, is_attacker, message_id, message_label, physical_sender_id, run_id, sequence_number, time, true_acceleration, true_heading, true_lane, true_speed, true_x, true_y
+
+Overlay common columns count: 36
+attack_dataset_id, attack_label, attack_notes, attack_start_time, attack_type, base_message_id, base_run_id, claimed_acceleration, claimed_heading, claimed_lane, claimed_sender_id, claimed_speed, claimed_time, claimed_x, claimed_y, event_type, false_object_id, is_attacker, is_synthetic_message, malicious_delay_ms, message_label, object_type, object_x, object_y, original_message_id, overlay_message_id, physical_sender_id, sequence_number, sybil_group_id, time, true_acceleration, true_heading, true_lane, true_speed, true_x, true_y
+
+Overlay union columns count: 36
+attack_dataset_id, attack_label, attack_notes, attack_start_time, attack_type, base_message_id, base_run_id, claimed_acceleration, claimed_heading, claimed_lane, claimed_sender_id, claimed_speed, claimed_time, claimed_x, claimed_y, event_type, false_object_id, is_attacker, is_synthetic_message, malicious_delay_ms, message_label, object_type, object_x, object_y, original_message_id, overlay_message_id, physical_sender_id, sequence_number, sybil_group_id, time, true_acceleration, true_heading, true_lane, true_speed, true_x, true_y
+
+================================================================================
+Example base rows
+================================================================================
+
+File: dataset/processed/run_001001/messages.csv
+Row 1: {'run_id': 'run_001001', 'message_id': 'run_001001__msg_00000000', 'time': '0.00', 'physical_sender_id': '0', 'claimed_sender_id': '0', 'sequence_number': '0', 'true_x': '4.80', 'true_y': '1548.71', 'true_speed': '12.73', 'true_acceleration': '0.00', 'true_heading': '0.00', 'true_lane': 'A6A7_0', 'claimed_x': '4.80', 'claimed_y': '1548.71', 'claimed_speed': '12.73', 'claimed_acceleration': '0.00', 'claimed_heading': '0.00', 'attack_type': 'benign', 'attack_label': '0', 'is_attacker': '0'}
+Row 2: {'run_id': 'run_001001', 'message_id': 'run_001001__msg_00000001', 'time': '0.10', 'physical_sender_id': '0', 'claimed_sender_id': '0', 'sequence_number': '1', 'true_x': '4.80', 'true_y': '1549.97', 'true_speed': '12.68', 'true_acceleration': '-0.47', 'true_heading': '0.00', 'true_lane': 'A6A7_0', 'claimed_x': '4.80', 'claimed_y': '1549.97', 'claimed_speed': '12.68', 'claimed_acceleration': '-0.47', 'claimed_heading': '0.00', 'attack_type': 'benign', 'attack_label': '0', 'is_attacker': '0'}
+
+File: dataset/processed/run_001010/messages.csv
+Row 1: {'run_id': 'run_001010', 'message_id': 'run_001010__msg_00000000', 'time': '0.00', 'physical_sender_id': '0', 'claimed_sender_id': '0', 'sequence_number': '0', 'true_x': '995.20', 'true_y': '1198.21', 'true_speed': '12.81', 'true_acceleration': '0.00', 'true_heading': '180.00', 'true_lane': 'E5E4_0', 'claimed_x': '995.20', 'claimed_y': '1198.21', 'claimed_speed': '12.81', 'claimed_acceleration': '0.00', 'claimed_heading': '180.00', 'attack_type': 'benign', 'attack_label': '0', 'is_attacker': '0'}
+Row 2: {'run_id': 'run_001010', 'message_id': 'run_001010__msg_00000001', 'time': '0.10', 'physical_sender_id': '0', 'claimed_sender_id': '0', 'sequence_number': '1', 'true_x': '995.20', 'true_y': '1196.93', 'true_speed': '12.80', 'true_acceleration': '-0.18', 'true_heading': '180.00', 'true_lane': 'E5E4_0', 'claimed_x': '995.20', 'claimed_y': '1196.93', 'claimed_speed': '12.80', 'claimed_acceleration': '-0.18', 'claimed_heading': '180.00', 'attack_type': 'benign', 'attack_label': '0', 'is_attacker': '0'}
+
+File: dataset/processed/run_001020/messages.csv
+Row 1: {'run_id': 'run_001020', 'message_id': 'run_001020__msg_00000000', 'time': '0.00', 'physical_sender_id': '0', 'claimed_sender_id': '0', 'sequence_number': '0', 'true_x': '995.20', 'true_y': '1198.21', 'true_speed': '12.81', 'true_acceleration': '0.00', 'true_heading': '180.00', 'true_lane': 'E5E4_0', 'claimed_x': '995.20', 'claimed_y': '1198.21', 'claimed_speed': '12.81', 'claimed_acceleration': '0.00', 'claimed_heading': '180.00', 'attack_type': 'benign', 'attack_label': '0', 'is_attacker': '0'}
+Row 2: {'run_id': 'run_001020', 'message_id': 'run_001020__msg_00000001', 'time': '0.10', 'physical_sender_id': '0', 'claimed_sender_id': '0', 'sequence_number': '1', 'true_x': '995.20', 'true_y': '1196.93', 'true_speed': '12.80', 'true_acceleration': '-0.18', 'true_heading': '180.00', 'true_lane': 'E5E4_0', 'claimed_x': '995.20', 'claimed_y': '1196.93', 'claimed_speed': '12.80', 'claimed_acceleration': '-0.18', 'claimed_heading': '180.00', 'attack_type': 'benign', 'attack_label': '0', 'is_attacker': '0'}
+
+================================================================================
+Example overlay rows
+================================================================================
+
+File: dataset/overlays/run_001001/constant_position_5/attack_overlay.csv
+Row 1: {'base_run_id': 'run_001001', 'attack_dataset_id': 'run_001001__constant_position_5', 'time': '120.00', 'attack_type': 'constant_position', 'attack_label': '1', 'message_label': '1', 'is_attacker': '1', 'is_synthetic_message': '0', 'physical_sender_id': '11', 'claimed_sender_id': '11', 'true_x': '738.60', 'true_y': '495.20', 'claimed_x': '738.60', 'claimed_y': '495.20', 'claimed_speed': '0.00', 'claimed_heading': '90.00', 'claimed_lane': 'C2D2_0'}
+Row 2: {'base_run_id': 'run_001001', 'attack_dataset_id': 'run_001001__constant_position_5', 'time': '120.10', 'attack_type': 'constant_position', 'attack_label': '1', 'message_label': '1', 'is_attacker': '1', 'is_synthetic_message': '0', 'physical_sender_id': '11', 'claimed_sender_id': '11', 'true_x': '738.60', 'true_y': '495.20', 'claimed_x': '738.60', 'claimed_y': '495.20', 'claimed_speed': '0.00', 'claimed_heading': '90.00', 'claimed_lane': 'C2D2_0'}
+
+File: dataset/overlays/run_001005/sybil_30/attack_overlay.csv
+Row 1: {'base_run_id': 'run_001005', 'attack_dataset_id': 'run_001005__sybil_30', 'time': '120.00', 'attack_type': 'sybil', 'attack_label': '17', 'message_label': '17', 'is_attacker': '1', 'is_synthetic_message': '0', 'physical_sender_id': '11', 'claimed_sender_id': '11_sybil_2', 'true_x': '1135.58', 'true_y': '2251.60', 'claimed_x': '1135.58', 'claimed_y': '2251.60', 'claimed_speed': '13.73', 'claimed_heading': '270.00', 'claimed_lane': 'F9E9_1'}
+Row 2: {'base_run_id': 'run_001005', 'attack_dataset_id': 'run_001005__sybil_30', 'time': '120.00', 'attack_type': 'sybil', 'attack_label': '17', 'message_label': '17', 'is_attacker': '1', 'is_synthetic_message': '0', 'physical_sender_id': '13', 'claimed_sender_id': '13_sybil_3', 'true_x': '2115.89', 'true_y': '1754.80', 'claimed_x': '2115.89', 'claimed_y': '1754.80', 'claimed_speed': '12.91', 'claimed_heading': '270.00', 'claimed_lane': 'J7I7_0'}
+
+File: dataset/overlays/run_001010/flooding_ddos_20/attack_overlay.csv
+Row 1: {'base_run_id': 'run_001010', 'attack_dataset_id': 'run_001010__flooding_ddos_20', 'time': '120.00', 'attack_type': 'flooding_ddos', 'attack_label': '20', 'message_label': '20', 'is_attacker': '1', 'is_synthetic_message': '0', 'physical_sender_id': '0', 'claimed_sender_id': '0', 'true_x': '11.40', 'true_y': '1004.80', 'claimed_x': '11.40', 'claimed_y': '1004.80', 'claimed_speed': '0.00', 'claimed_heading': '270.00', 'claimed_lane': 'B4A4_0'}
+Row 2: {'base_run_id': 'run_001010', 'attack_dataset_id': 'run_001010__flooding_ddos_20', 'time': '120.00', 'attack_type': 'flooding_ddos', 'attack_label': '20', 'message_label': '20', 'is_attacker': '1', 'is_synthetic_message': '1', 'physical_sender_id': '0', 'claimed_sender_id': '0', 'true_x': '11.40', 'true_y': '1004.80', 'claimed_x': '11.40', 'claimed_y': '1004.80', 'claimed_speed': '0.00', 'claimed_heading': '270.00', 'claimed_lane': 'B4A4_0'}
+
+File: dataset/overlays/run_001015/gnss_spoofing_10/attack_overlay.csv
+Row 1: {'base_run_id': 'run_001015', 'attack_dataset_id': 'run_001015__gnss_spoofing_10', 'time': '120.00', 'attack_type': 'gnss_spoofing', 'attack_label': '22', 'message_label': '22', 'is_attacker': '1', 'is_synthetic_message': '0', 'physical_sender_id': '102', 'claimed_sender_id': '102', 'true_x': '1395.67', 'true_y': '2245.20', 'claimed_x': '1395.67', 'claimed_y': '2245.20', 'claimed_speed': '11.53', 'claimed_heading': '90.00', 'claimed_lane': 'F9G9_0'}
+Row 2: {'base_run_id': 'run_001015', 'attack_dataset_id': 'run_001015__gnss_spoofing_10', 'time': '120.00', 'attack_type': 'gnss_spoofing', 'attack_label': '22', 'message_label': '22', 'is_attacker': '1', 'is_synthetic_message': '0', 'physical_sender_id': '111', 'claimed_sender_id': '111', 'true_x': '2052.33', 'true_y': '254.80', 'claimed_x': '2052.33', 'claimed_y': '254.80', 'claimed_speed': '13.11', 'claimed_heading': '270.00', 'claimed_lane': 'J1I1_0'}
+
+File: dataset/overlays/run_001020/stale_message_replay_30/attack_overlay.csv
+Row 1: {'base_run_id': 'run_001020', 'attack_dataset_id': 'run_001020__stale_message_replay_30', 'time': '120.00', 'attack_type': 'stale_message_replay', 'attack_label': '16', 'message_label': '16', 'is_attacker': '1', 'is_synthetic_message': '0', 'physical_sender_id': '1', 'claimed_sender_id': '1', 'true_x': '1488.60', 'true_y': '748.40', 'claimed_x': '905.45', 'claimed_y': '745.20', 'claimed_speed': '14.36', 'claimed_heading': '90.00', 'claimed_lane': 'F3G3_1'}
+Row 2: {'base_run_id': 'run_001020', 'attack_dataset_id': 'run_001020__stale_message_replay_30', 'time': '120.00', 'attack_type': 'stale_message_replay', 'attack_label': '16', 'message_label': '16', 'is_attacker': '1', 'is_synthetic_message': '0', 'physical_sender_id': '10', 'claimed_sender_id': '10', 'true_x': '738.60', 'true_y': '1745.20', 'claimed_x': '264.92', 'claimed_y': '1745.20', 'claimed_speed': '12.53', 'claimed_heading': '90.00', 'claimed_lane': 'C7D7_0'}
+
+File: dataset/overlays/run_001020/object_position_shift_30/attack_overlay.csv
+Row 1: {'base_run_id': 'run_001020', 'attack_dataset_id': 'run_001020__object_position_shift_30', 'time': '120.00', 'attack_type': 'object_position_shift', 'attack_label': '26', 'message_label': '26', 'is_attacker': '1', 'is_synthetic_message': '0', 'physical_sender_id': '101', 'claimed_sender_id': '101', 'true_x': '710.53', 'true_y': '1504.80', 'claimed_x': '710.53', 'claimed_y': '1504.80', 'claimed_speed': '11.49', 'claimed_heading': '270.00', 'claimed_lane': 'D6C6_0'}
+Row 2: {'base_run_id': 'run_001020', 'attack_dataset_id': 'run_001020__object_position_shift_30', 'time': '120.00', 'attack_type': 'object_position_shift', 'attack_label': '26', 'message_label': '26', 'is_attacker': '1', 'is_synthetic_message': '0', 'physical_sender_id': '104', 'claimed_sender_id': '104', 'true_x': '-4.80', 'true_y': '2164.94', 'claimed_x': '-4.80', 'claimed_y': '2164.94', 'claimed_speed': '13.85', 'claimed_heading': '180.00', 'claimed_lane': 'A9A8_0'}
+
+================================================================================
+Overlay manifest sample
+================================================================================
+Manifest header:
+base_run_id, attack_dataset_id, attack_type, attacker_ratio, num_attackers, overlay_rows, synthetic_rows, attack_start_time, output
+
+Manifest row 1: {'base_run_id': 'run_001001', 'attack_dataset_id': 'run_001001__acceleration_manipulation_10', 'attack_type': 'acceleration_manipulation', 'attacker_ratio': '0.1', 'num_attackers': '', 'overlay_rows': '23151', 'synthetic_rows': '0', 'attack_start_time': '120.0', 'output': 'dataset/overlays/run_001001/acceleration_manipulation_10/attack_overlay.csv'}
+Manifest row 2: {'base_run_id': 'run_001001', 'attack_dataset_id': 'run_001001__acceleration_manipulation_20', 'attack_type': 'acceleration_manipulation', 'attacker_ratio': '0.2', 'num_attackers': '', 'overlay_rows': '50242', 'synthetic_rows': '0', 'attack_start_time': '120.0', 'output': 'dataset/overlays/run_001001/acceleration_manipulation_20/attack_overlay.csv'}
+Manifest row 3: {'base_run_id': 'run_001001', 'attack_dataset_id': 'run_001001__acceleration_manipulation_30', 'attack_type': 'acceleration_manipulation', 'attacker_ratio': '0.3', 'num_attackers': '', 'overlay_rows': '74456', 'synthetic_rows': '0', 'attack_start_time': '120.0', 'output': 'dataset/overlays/run_001001/acceleration_manipulation_30/attack_overlay.csv'}
+Manifest row 4: {'base_run_id': 'run_001001', 'attack_dataset_id': 'run_001001__acceleration_manipulation_5', 'attack_type': 'acceleration_manipulation', 'attacker_ratio': '0.05', 'num_attackers': '', 'overlay_rows': '13026', 'synthetic_rows': '0', 'attack_start_time': '120.0', 'output': 'dataset/overlays/run_001001/acceleration_manipulation_5/attack_overlay.csv'}
+Manifest row 5: {'base_run_id': 'run_001001', 'attack_dataset_id': 'run_001001__beacon_rate_abuse_10', 'attack_type': 'beacon_rate_abuse', 'attacker_ratio': '0.1', 'num_attackers': '', 'overlay_rows': '59256', 'synthetic_rows': '29628', 'attack_start_time': '120.0', 'output': 'dataset/overlays/run_001001/beacon_rate_abuse_10/attack_overlay.csv'}
+
+================================================================================
+Next build decision
+================================================================================
+The master file should be created from:
+1. dataset/processed/run_001001 to run_001020/messages.csv
+2. dataset/overlays/run_001001 to run_001020/**/attack_overlay.csv
+
+The master file should exclude:
+1. dataset/processed/run_000001
+2. dataset/processed/run_000002
+3. dataset/attacks/
+
+Recommended master output:
+research_ready/vanet_ids26_master.csv.gz
