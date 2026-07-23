@@ -1,4 +1,4 @@
-# Vehicular Ad Hoc Network (VANET)-IDS26
+# Vehicular Ad Hoc Network (VANET)-IDS26 Dataset
 
 **VANET-IDS26** is a large-scale Vehicular Ad Hoc Network intrusion detection dataset containing benign VANET messages and 26 cyberattack classes.
 
