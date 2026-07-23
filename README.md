@@ -37,11 +37,11 @@ A formal citation and DOI will be added after the dataset paper or archive DOI i
 Temporary citation:
 
 ```bibtex
-@dataset{vanet_ids26_2026,
-  title  = {VANET-IDS26: A Large-Scale Vehicular Ad Hoc Network Intrusion Detection Dataset with 26 Cyberattack Classes},
-  author = {Mahmudul Hasan Porag and collaborators},
-  year   = {2026},
-  note   = {Dataset for VANET intrusion detection research. DOI and formal citation to be updated after public archive release.}
+@ARTICLE{Ahsan2024-mo,
+  title  = "Privacy-preserving intrusion detection in software-defined {VANET} using Federated Learning with {BERT}",
+  author = "Ahsan, Shakil Ibne and Legg, Phil and Iftekharul Alam, S M",
+  year   =  2024,
+  eprint = "2401.07343"
 }
 ```
 
