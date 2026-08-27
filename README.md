@@ -627,3 +627,5 @@ If you want to push accuracy further, the most useful next experiment is:
 - increase rounds to `20`
 - compare `fedtrimmedavg` vs `fedmedian`
 - optionally test `d_model=256` if GPU memory allows
+
+## Dataset repo: https://huggingface.co/datasets/mail2sia/FL-BERT-IDS-2026-flower-v2
