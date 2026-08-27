@@ -29,22 +29,16 @@ The active canonical dataset files in `data/` are:
 
 This is the current local source-of-truth that replaces the older Hugging Face snapshot. The Hugging Face dataset repo should mirror these files plus the matching manifests and dataset card text.
 
-The current experiment also keeps manifests under `data/manifests/`, including:
+The large CSV files, client shards, logs, and generated partition manifests are intentionally ignored in GitHub. After placing the master CSV locally, run `prepare` to regenerate:
 
-- `data/manifests/vanet_ids26_master_manifest.json`
+- `data/client_shards/`
 - `data/manifests/client_partitions_manifest.json`
 - `data/manifests/sim_bridge_manifest.csv`
-- `data/manifests/big_balanced_dataset_manifest.json`
-- `data/manifests/big_balanced_splits_manifest.json`
-- `data/manifests/big_balanced_fullsize_splits_manifest.json`
 
-Additional preserved manifests:
+The repository keeps reusable lightweight assets such as:
 
-- `data/manifests/clean_balanced_dataset_manifest.json`
-- `data/manifests/vanet_ids26_master_manifest.json`
-- `data/manifests/vanet_ids26_splits_manifest.json`
-- `data/manifests/vanet_ids26_master_codebook.json`
 - `data/manifests/temporal_flbert_vocab.json`
+- `models/final_global_model.pt`
 
 ## Attack Classes
 
