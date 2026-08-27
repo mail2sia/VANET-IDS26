@@ -628,4 +628,14 @@ If you want to push accuracy further, the most useful next experiment is:
 - compare `fedtrimmedavg` vs `fedmedian`
 - optionally test `d_model=256` if GPU memory allows
 
-## Dataset repo: https://huggingface.co/datasets/mail2sia/FL-BERT-IDS-2026-flower-v2
+## Dataset repo
+https://huggingface.co/datasets/mail2sia/FL-BERT-IDS-2026-flower-v2
+
+## Citation 
+@misc{ahsan2026-fl-bert,
+  author       = {Ahsan, Shakil Ibne and Legg, Phil and Alam, S M Iftekharul},
+  title        = {Federated Transformer Intrusion Detection for Software-Defined VANETs: A Reproducibility and Robustness Audit on VANET-IDS26},
+  year         = {2026},
+  version      = {0.1.0},
+  url          = {https://github.com/mail2sia/VANET-IDS26.git}
+}
