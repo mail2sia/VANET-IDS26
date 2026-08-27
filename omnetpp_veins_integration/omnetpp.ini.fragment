@@ -1,0 +1,8 @@
+# Closed-loop IDS parameters to add to your OMNeT++/Veins configuration.
+# The exact module path depends on your simulation project.
+
+*.manager.moduleType = "org.car2x.veins.nodes.Scenario"
+*.idsHost = "127.0.0.1"
+*.idsPort = 9090
+*.idsTimeoutSeconds = 2
+*.enableClosedLoopIds = true

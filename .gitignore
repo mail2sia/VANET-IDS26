@@ -1,0 +1,26 @@
+.cache/
+__pycache__/
+*.py[cod]
+*$py.class
+
+.pytest_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+.env
+.env.*
+.venv/
+
+# Large/generated data artifacts
+*.csv
+data/vanet_ids26_master.csv
+data/client_shards/
+
+# Runtime output
+logs/
+tmp/
+temp/
+*.log
+*.pid

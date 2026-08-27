@@ -1,0 +1,19 @@
+{
+  "vehicle_id": "veh_00001",
+  "sim_time": 12.0,
+  "features": {
+    "run": "veins_closed_loop",
+    "density": 1,
+    "ratio": 0,
+    "time_cs": 1200,
+    "sender": "veh_00001",
+    "seq": 42,
+    "x_cm": 25000,
+    "y_cm": 0,
+    "speed_cms": 700,
+    "accel_cms2": 20,
+    "heading_cdeg": 9000,
+    "lane": 0,
+    "event": 0
+  }
+}
