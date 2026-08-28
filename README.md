@@ -622,7 +622,7 @@ https://huggingface.co/datasets/mail2sia/FL-BERT-IDS-2026-flower-v2
 
 ## Citation 
 @misc{ahsan2026-fl-bert,
-  author       = {Ahsan, Shakil Ibne and Legg, Phil and Alam, S M Iftekharul},
+  author       = {Ahsan, Shakil Ibne and Legg, Phil and Zeadally, Sherali},
   title        = {Federated Transformer Intrusion Detection for Software-Defined VANETs: A Reproducibility and Robustness Audit on VANET-IDS26},
   year         = {2026},
   version      = {0.1.0},
