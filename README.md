@@ -1,6 +1,6 @@
 ---
 Name: VANET-IDS26
-license: Apache License 2.0
+license: other
 tags:
 - vehicular-network
 - intrusion-detection
@@ -14,31 +14,31 @@ This repository contains a reproducible Flower-based federated learning pipeline
 
 ## What This Repository Does
 
-- Verifies and manages the VANET-IDS26 master dataset and derived manifests.
-- Builds reproducible federated client shards.
+- Uses the VANET-IDS26 full master CSV as the source corpus.
+- Builds reproducible non-IID federated client shards directly from the master CSV.
+- Builds the shared vocabulary used by the structured-message Transformer.
 - Creates an OMNeT++ / Veins bridge manifest for simulation-to-client mapping.
 - Runs a Flower server with robust aggregation.
 - Runs multiple Flower clients, including optional malicious clients for robustness testing.
-- Uses a Temporal FL-BERT style transformer model on CUDA when available.
+- Evaluates with client-local validation streams derived inside each shard.
 
 ## Current Dataset Layout
 
-The active canonical dataset files in `data/` are:
+The active dataset source is:
 
 - `data/vanet_ids26_master.csv`
 
-This is the current local source-of-truth that replaces the older Hugging Face snapshot. The Hugging Face dataset repo should mirror these files plus the matching manifests and dataset card text.
+The current local master CSV contains `117,288,201` rows. The latest Flower workflow does not rebuild separate train, validation, or test CSV files. Instead, `prepare` streams the master CSV and writes federated client shards under `data/client_shards/`. During training, each client shard is split internally into local training and validation streams: rows satisfying `(row_index + seed) % 5 == 0` are used for validation, and the remaining rows are used for local training.
 
-The large CSV files, client shards, logs, and generated partition manifests are intentionally ignored in GitHub. After placing the master CSV locally, run `prepare` to regenerate:
+Generated runtime artifacts include:
 
 - `data/client_shards/`
 - `data/manifests/client_partitions_manifest.json`
-- `data/manifests/sim_bridge_manifest.csv`
-
-The repository keeps reusable lightweight assets such as:
-
 - `data/manifests/temporal_flbert_vocab.json`
+- `data/manifests/sim_bridge_manifest.csv`
 - `models/final_global_model.pt`
+
+Large CSV files, client shards, logs, generated manifests, and model checkpoints are intentionally kept out of normal source-control workflows.
 
 ## Attack Classes
 
@@ -74,16 +74,13 @@ The dataset is balanced across `27` labels: one benign class and `26` attack cla
 | `25` | `false_object_injection` | A fake road object is injected into the scene description. |
 | `26` | `object_position_shift` | The position of a reported object is shifted away from its true location. |
 
-## Observed Dataset Sizes
+## Observed Dataset Size
 
-Latest canonical file sizes:
+Latest active source file:
 
-- `data/vanet_ids26_master.csv` - about `76G`
-- `data/vanet_ids26_train.csv` - about `61G`
-- `data/vanet_ids26_validation.csv` - about `7.6G`
-- `data/vanet_ids26_test.csv` - about `7.6G`
+- `data/vanet_ids26_master.csv` - `117,288,201` rows
 
-These large split files are the active experiment files now.
+The active Flower pipeline uses this master file to prepare client shards. Separate train/validation/test CSV files are not part of the cleaned latest-run workflow.
 
 ## Environment
 
@@ -119,8 +116,8 @@ flowchart LR
 #### 1. Dataset Layer
 
 - The master dataset is the authoritative input.
-- Full-size canonical splits exist for archival and experiment tracking.
-- Reproducible manifests capture the provenance of each step.
+- `prepare` streams the master dataset and creates non-IID client shards.
+- Reproducible manifests capture the source path, row count, shard paths, label distributions, vocabulary path, and model sequence length.
 
 #### 2. Federated Partition Layer
 
@@ -239,21 +236,22 @@ pip install flwr torch pandas numpy scikit-learn
 
 ## Verification
 
-Run the dataset and manifest check:
+The cleaned Flower pipeline exposes the active commands only:
 
 ```bash
 cd /opt/sahsan03/VANET-IDS26
-python3 scripts/flower_vanet_pipeline.py verify
+python3 scripts/flower_vanet_pipeline.py --help
 ```
 
-Expected checks include:
+Expected subcommands:
 
-- master CSV exists
-- master manifest exists
-- client partition manifest exists
-- bridge manifest exists
-- full-size split files exist
-- full-size split manifest exists
+- `prepare`
+- `bridge`
+- `baridge`
+- `server`
+- `client`
+
+A lightweight smoke test can be run by copying the script to a temporary folder with a tiny `data/vanet_ids26_master.csv`, then running `prepare --limit-rows` and `bridge`. This avoids overwriting the production client shards and vocabulary.
 
 ## End-to-End Operational Process
 
@@ -600,13 +598,13 @@ The pipeline is reproducible because it uses:
 
 ## File Map
 
-- `scripts/flower_vanet_pipeline.py` - end-to-end pipeline implementation
-- `data/vanet_ids26_master.csv` - master dataset
-- `data/vanet_ids26_train.csv` - canonical large train split
-- `data/vanet_ids26_validation.csv` - canonical large validation split
-- `data/vanet_ids26_test.csv` - canonical large test split
+- `scripts/flower_vanet_pipeline.py` - active Flower pipeline implementation
+- `data/vanet_ids26_master.csv` - master dataset used by `prepare`
 - `data/client_shards/` - prepared federated client shards
-- `data/manifests/` - manifests and vocabulary
+- `data/manifests/client_partitions_manifest.json` - shard manifest
+- `data/manifests/temporal_flbert_vocab.json` - shared vocabulary
+- `data/manifests/sim_bridge_manifest.csv` - OMNeT++ / Veins bridge manifest
+- `models/final_global_model.pt` - latest saved global model
 - `logs/` - run logs
 
 ## Practical Guidance
