@@ -1,6 +1,6 @@
 ---
 pretty_name: VANET-IDS26
-license: other
+license: Apache License 2.0
 tags:
 - vehicular-network
 - intrusion-detection
