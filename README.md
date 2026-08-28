@@ -618,15 +618,6 @@ The pipeline is reproducible because it uses:
 - For robustness-focused experiments, keep a majority of clients honest and set one client to `--malicious sign_flip` or `--malicious noise`.
 - Treat scenarios where every FL client is malicious as stress/failure tests, not as the main IDS detection benchmark.
 
-## Suggested Next Step
-
-If you want to push accuracy further, the most useful next experiment is:
-
-- keep the same data
-- keep the stronger Temporal FL-BERT defaults
-- increase rounds to `20`
-- compare `fedtrimmedavg` vs `fedmedian`
-- optionally test `d_model=256` if GPU memory allows
 
 ## Dataset repo
 https://huggingface.co/datasets/mail2sia/FL-BERT-IDS-2026-flower-v2
