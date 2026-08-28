@@ -1,5 +1,5 @@
 ---
-pretty_name: VANET-IDS26
+Name: VANET-IDS26
 license: Apache License 2.0
 tags:
 - vehicular-network
